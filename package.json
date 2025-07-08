@@ -12,6 +12,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@heroicons/vue": "^2.2.0",
     "@tailwindcss/vite": "^4.1.11",
     "tailwindcss": "^4.1.11",
     "vue": "^3.2.45"
@@ -28,6 +29,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.1.2",
     "prettier": "^3.6.2",
+    "sass": "^1.89.2",
     "typescript": "^5.8.3",
     "vite": "^5.4.19",
     "vue-eslint-parser": "^10.2.0",
