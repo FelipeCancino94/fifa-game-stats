@@ -1,46 +1,23 @@
 <script setup lang="ts">
-import { GlobeAltIcon } from '@heroicons/vue/16/solid'
+import { CurrencyDollarIcon } from '@heroicons/vue/16/solid'
 
 defineProps<{
   label: string
   showIcon?: boolean
+  icon?: string
 }>()
 </script>
 
 <template>
-  <button class="liquid-glass py-2 px-4 flex justify-around items-center gap-2">
-    <GlobeAltIcon class="w-5" v-if="showIcon" />
+  <button class="button py-2 px-4 flex justify-around items-center gap-2">
+    <CurrencyDollarIcon class="w-5" v-if="showIcon && icon === 'dollar'" />
     <span>{{ label }}</span>
   </button>
 </template>
 
 <style lang="scss" scoped>
-.liquid-glass {
-  position: relative;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(2px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  border-radius: 2rem;
-  box-shadow:
-    0 8px 32px rgba(31, 38, 135, 0.2),
-    inset 0 4px 20px rgba(255, 255, 255, 0.3);
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 2rem;
-    backdrop-filter: blur(1px);
-    box-shadow:
-      inset -10px -8px 0px -11px rgba(255, 255, 255, 1),
-      inset 0px -9px 0px -8px rgba(255, 255, 255, 1);
-    opacity: 0.6;
-    z-index: -1;
-    filter: blur(1px) drop-shadow(10px 4px 6px black) brightness(115%);
-  }
+@use '../styles/mixins' as m;
+.button {
+  @include m.liquid-glass;
 }
 </style>
