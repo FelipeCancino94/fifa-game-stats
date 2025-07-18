@@ -10,11 +10,11 @@ import StyleGuide from './pages/StyleGuide.vue'
 
 <style lang="scss" scoped>
 .app-content {
-  background-image: url(./assets/bg-mobile.jpg);
+  background-image: url(./assets/bg.jpg);
   background-size: cover;
 
   @media (min-width: 1024px) {
-    background-image: url(./assets/bg-desktop.jpg);
+    background-image: url(./assets/bg-desk.jpg);
   }
 }
 </style>
