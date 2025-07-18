@@ -47,5 +47,9 @@ defineProps<{
   @include m.liquid-glass;
 
   padding: 24px;
+
+  &:before {
+    content: none;
+  }
 }
 </style>
