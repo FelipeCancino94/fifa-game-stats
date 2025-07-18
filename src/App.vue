@@ -8,10 +8,13 @@ import StyleGuide from './pages/StyleGuide.vue'
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .app-content {
-  background-image: url(./assets/background-boreal.jpg);
+  background-image: url(./assets/bg-mobile.jpg);
   background-size: cover;
-  background-position: -33rem;
+
+  @media (min-width: 1024px) {
+    background-image: url(./assets/bg-desktop.jpg);
+  }
 }
 </style>
