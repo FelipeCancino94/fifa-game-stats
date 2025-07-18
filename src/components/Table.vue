@@ -1,19 +1,40 @@
 <script setup lang="ts">
 defineProps<{
-  dataIdentifier?: string
-  cells: number
-  rows: number
+  data: Array<Record<string, any>>
 }>()
 </script>
 
 <template>
-  <div class="table w-full">
-    <div
-      class="row grid grid-cols-5 gap-4 border-t-2 border-neutral-50/25"
-      v-for="(row, index) in rows"
-    >
-      <div class="cell py-1 text-center" v-for="(cell, index) in cells">
-        <p>Cell</p>
+  <div class="table-component overflow-x-auto w-full">
+    <div class="table w-full">
+      <!-- Header -->
+      <div class="table-header-group">
+        <div class="table-row border-b-2 border-neutral-50/25 font-bold">
+          <div
+            class="table-cell min-w-[120px] whitespace-nowrap px-4 py-1 text-left"
+            v-for="(value, key) in data[0]"
+            :key="key"
+          >
+            {{ key }}
+          </div>
+        </div>
+      </div>
+
+      <!-- Rows -->
+      <div class="table-row-group">
+        <div
+          class="table-row border-t border-neutral-50/10"
+          v-for="(row, rowIndex) in data"
+          :key="rowIndex"
+        >
+          <div
+            class="table-cell min-w-[120px] whitespace-nowrap px-4 py-1 text-left"
+            v-for="(value, key) in row"
+            :key="key"
+          >
+            {{ value }}
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -22,9 +43,9 @@ defineProps<{
 <style lang="scss" scoped>
 @use '../styles/mixins' as m;
 
-.table {
+.table-component {
   @include m.liquid-glass;
 
-  padding: 24px 0;
+  padding: 24px;
 }
 </style>

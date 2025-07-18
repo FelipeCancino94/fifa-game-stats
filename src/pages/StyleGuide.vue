@@ -2,6 +2,30 @@
 import Button from '../components/Button.vue'
 import Card from '../components/Card.vue'
 import Table from '../components/Table.vue'
+
+const tableData = [
+  {
+    name: 'Lionel Messi',
+    team: 'Inter Miami',
+    goals: 12,
+    assists: 8,
+    position: 'Forward',
+  },
+  {
+    name: 'Kylian Mbappé',
+    team: 'PSG',
+    goals: 20,
+    assists: 5,
+    position: 'Forward',
+  },
+  {
+    name: 'Kevin De Bruyne',
+    team: 'Man City',
+    goals: 5,
+    assists: 15,
+    position: 'Midfielder',
+  },
+]
 </script>
 
 <template>
@@ -38,7 +62,7 @@ import Table from '../components/Table.vue'
     </div>
     <h2 class="text-2xl">Table</h2>
     <div class="pl-4 mb-4">
-      <Table :cells="5" :rows="3" />
+      <Table :data="tableData" />
     </div>
   </div>
 </template>
