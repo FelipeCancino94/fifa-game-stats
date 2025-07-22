@@ -3,7 +3,7 @@ import StyleGuide from './pages/StyleGuide.vue'
 </script>
 
 <template>
-  <div class="app-content w-screen h-screen">
+  <div class="app-content w-full h-full min-h-screen">
     <StyleGuide />
   </div>
 </template>
