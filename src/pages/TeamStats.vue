@@ -1,5 +1,20 @@
 <script setup lang="ts">
+import { ref, onMounted } from 'vue'
 import Card from '../components/Card.vue'
+
+const players = ref(null)
+const error = ref(null)
+/* eslint-disable */
+onMounted(async () => {
+  try {
+    const res = await fetch('/api/team')
+    players.value = await res.json()
+    console.log(players.value)
+  } catch (err: any) {
+    error.value = err
+    console.error(err)
+  }
+})
 </script>
 
 <template>

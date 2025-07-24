@@ -4,8 +4,13 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    vue(),
-    tailwindcss(),
-  ],
+  plugins: [vue(), tailwindcss()],
+  /* server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:5173', // si estás corriendo un backend local
+        changeOrigin: true
+      }
+    }
+  } */
 })
